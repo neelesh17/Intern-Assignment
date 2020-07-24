@@ -2,19 +2,21 @@ import React,{useState} from 'react';
 import axios from 'axios';
 
 import {ImagesContainer, Image, Grid, SmallerGrid, Pagation} from './images-container.styles';
+import Spinner from '../spinner/spinner.component';
 
 const ImageContainer = () => {
-    const [pageImages, setPageImages] = useState({
+    const [pageImagesData, setImagesData] = useState({
         imagesData: [],
         onPage: 1,
+        isLoading: false,
     });
-    const {imagesData, onPage} = pageImages;
+    const {imagesData, onPage,  isLoading} = pageImagesData;
     const getImages = (pageNo) => {
         axios({
             url: `https://picsum.photos/v2/list?page=${pageNo}&limit=5`,
             method: 'get',
         }).then(async response => {
-            await setPageImages({onPage: pageNo,imagesData: response.data})
+            await setImagesData({onPage: pageNo,imagesData: response.data,isLoading: false});
         }).catch(error => {
             console.log('Payment error: ', error);
             alert('There was an issue while fetching the images');
@@ -23,18 +25,22 @@ const ImageContainer = () => {
     
     const handlePrev = () => {
         if(onPage>1){
+            setImagesData({...pageImagesData, isLoading: true})
             getImages(onPage-1);
         }
     }
 
     const handleNext = () => {
+        setImagesData({...pageImagesData, isLoading: true})
         getImages(onPage+1);
     }
 
     if(!Array.isArray(imagesData) || !imagesData.length){
-        return(<p>isLoading....{getImages(1)}</p> )
-
-    } else {
+        return(<Spinner>{getImages(1)}</Spinner> )
+    
+    } else if(isLoading === true){
+        return(<Spinner />)
+    }else {
         return(
             <div>
                 <ImagesContainer> 
@@ -52,6 +58,7 @@ const ImageContainer = () => {
                 </ImagesContainer>
                 <Pagation>
                     {onPage===1 ? <p></p> : <p onClick={handlePrev}>Prev</p>}
+                    {onPage}
                     <p onClick={handleNext}>Next</p>
                 </Pagation>
             </div>

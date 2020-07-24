@@ -11,8 +11,8 @@ export const NavContainer = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-    width: 5em;
-    height: 60%;
+    width: 6em;
+    height: 100%;
     padding: 5px 0 0 5px ;
     text-align: center;
     @media screen and (max-width: 800px) {

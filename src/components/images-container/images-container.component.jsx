@@ -36,26 +36,28 @@ const ImageContainer = () => {
     }
 
     if(!Array.isArray(imagesData) || !imagesData.length){
-        return(<Spinner>{getImages(1)}</Spinner> )
+        return(<Spinner>{getImages(onPage)}</Spinner> )
     
-    } else if(isLoading === true){
-        return(<Spinner />)
-    }else {
+    } else {
         return(
             <div>
-                <ImagesContainer> 
-                    <Grid>
-                        <Image src={imagesData[0].download_url} alt="Someimage" width="70%" height="56em"/>
-                        <SmallerGrid>
-                            <Image src={imagesData[1].download_url} alt="Someimage" width="100%" height="27em"/>
-                            <Image src={imagesData[2].download_url} alt="Someimage" width="100%" height="27em"/>
-                        </SmallerGrid>
-                    </Grid>
-                    <Grid>
-                        <Image src={imagesData[3].download_url} alt="Someimage" width="49%" height="40em"/>
-                        <Image src={imagesData[4].download_url} alt="Someimage" width="49%" height="40em"/>
-                    </Grid>
-                </ImagesContainer>
+                {
+                    isLoading ? 
+                    <Spinner /> :
+                    <ImagesContainer> 
+                        <Grid>
+                            <Image src={imagesData[0].download_url} alt="Someimage" width="65%" height="56em"/>
+                            <SmallerGrid>
+                                <Image src={imagesData[1].download_url} alt="Someimage" width="100%" height="27em"/>
+                                <Image src={imagesData[2].download_url} alt="Someimage" width="100%" height="27em"/>
+                            </SmallerGrid>
+                        </Grid>
+                        <Grid>
+                            <Image src={imagesData[3].download_url} alt="Someimage" width="49%" height="40em"/>
+                            <Image src={imagesData[4].download_url} alt="Someimage" width="49%" height="40em"/>
+                        </Grid>
+                    </ImagesContainer>
+                }
                 <Pagation>
                     {onPage===1 ? <p></p> : <p onClick={handlePrev}>Prev</p>}
                     {onPage}

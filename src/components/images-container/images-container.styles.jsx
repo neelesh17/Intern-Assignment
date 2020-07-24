@@ -30,7 +30,7 @@ export const Grid = styled.div`
 export const SmallerGrid = styled.div`
     display: flex;    
     flex-direction:column; 
-    width: 29%; 
+    width: 34%; 
     justify-content: space-between;
     @media screen and (max-width: 800px) {
         display: block;
@@ -43,5 +43,9 @@ export const Pagation = styled.div`
     justify-content: space-around;
     p{
         cursor:pointer;
+        color: rgba(0,0,0,0.5);
+        :hover{
+            color: black;
+        }
     }
 `;

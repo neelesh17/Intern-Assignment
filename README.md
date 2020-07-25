@@ -1,4 +1,4 @@
-
+clone this repository using git clone git@github.com:neelesh17/Intern-Assignment.git
 ## Run the Scripts to launch the site
 
 ### `npm install`

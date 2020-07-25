@@ -20,5 +20,5 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 ### `server -s build`
-This script deployes the site on [http://localhost:5000]{http://localhost:5000} and on [http://192.168.43.136:5000] {http://192.168.43.136:5000}.
-Open any one of the  urls to view the site.
+This script deployes the site on [http://192.168.43.136:5000](http://192.168.43.136:5000).
+Open the url to view the site.

@@ -13,6 +13,7 @@ export const Image = styled.img`
     height: ${props => props.height};
     @media screen and (max-width: 800px) {
         width: 100%;
+        height: 30em;
         padding: 1em;
     }
 `;

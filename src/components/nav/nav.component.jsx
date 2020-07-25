@@ -1,15 +1,15 @@
 import React from 'react';
-import {ReactComponent as Logo} from '../../assets/logo.svg';
+import {ReactComponent as Logo} from '../../assets/Logo.svg'
 
 import {  NavContainer, LogoContainer, Text, TextContainer } from './nav.styles';
 
 const Navbar = () => (
     <NavContainer>
         <LogoContainer >
-            <Logo className="logo" />
+            <Logo />
         </LogoContainer>
         <TextContainer>
-            <Text>ABC PRIVATE LMT</Text>
+            <Text>Random Pictures</Text>
         </TextContainer>
     </NavContainer>
 );

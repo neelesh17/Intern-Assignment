@@ -11,13 +11,12 @@ export const NavContainer = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-    width: 6em;
+    width: 5em;
     height: 100%;
-    padding: 5px 0 0 5px ;
+    padding: 0 0 0 8px ;
     text-align: center;
     @media screen and (max-width: 800px) {
         width: 5em;
-        padding: 2px;
     }
 `;
 export const TextContainer = styled.div`

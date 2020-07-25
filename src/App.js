@@ -4,7 +4,7 @@ import './App.css';
 
 import NavBar from './components/nav/nav.component';
 import HeaderImage from './components/header-image/header-image.component';
-import ImageContainer from './components/images-container/images-container.component';
+import ContentContainer from './components/content-container/content-container.component';
 
 const App = () => {
   
@@ -12,7 +12,7 @@ const App = () => {
     <div>
       <NavBar />
       <HeaderImage />
-      <ImageContainer />
+      <ContentContainer />
     </div>
 )}
 
